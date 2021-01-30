@@ -10,7 +10,6 @@ const comicSchema = mongoose.Schema(
     },
     subtitle: {
       type: String,
-      required: true,
     },
     publisher: {
       type: String,

@@ -15,4 +15,29 @@ const getComics = asyncHandler(async (req, res) => {
   }
 })
 
+
+// @desc    Create a comic
+// @route   POST /api/comics
+// @access  Public
+// const createComic = asyncHandler(async (req, res) => {
+//   const comic = new Comic({
+//     title: 'Sample title',
+//     subtitle: 'Sample name',
+//     publisher: 'Sample name',
+//     issue: 'Sample name',
+//     year: 'Sample name',
+//     age: 0,
+//     author: req.user._id,
+//     artist: '/images/sample.jpg',
+//     character: 'Sample brand',
+//     category: 'Sample category',
+//     description: 0,
+//     image: 0,
+//   })
+
+//   const createComic = await product.save()
+//   res.status(201).json(createdProduct)
+
+// })
+
 export { getComics }
