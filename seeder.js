@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
-
+import users from './data/users.js'
 import comics from './data/comics.js'
 import Comic from './models/comicModel.js'
-
+import User from './models/userModel.js'
 import connectDB from './config/db.js'
 
 dotenv.config()
@@ -14,9 +14,14 @@ connectDB()
 const importData = async () => {
   try {
     await Comic.deleteMany()
+    await User.deleteMany()
+
+    const createdUsers = await User.insertMany(users)
+
+    const adminUser = createdUsers[0]._id
 
     const sampleComics = comics.map((comic) => {
-      return { ...comic }
+      return { ...comic, user: adminUser }
     })
 
     await Comic.insertMany(sampleComics)
@@ -32,6 +37,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await Comic.deleteMany()
+    await User.deleteMany()
 
     console.log('Data Destroyed!'.red.inverse)
     process.exit()
