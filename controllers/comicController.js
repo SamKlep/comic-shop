@@ -15,6 +15,19 @@ const getComics = asyncHandler(async (req, res) => {
   }
 })
 
+// @desc    Fetch single comic
+// @route   GET /api/comics/:id
+// @access  Public
+const getComicById = asyncHandler(async (req, res) => {
+  const comic = await Comic.findById(req.params.id)
+
+  if (comic) {
+    res.json(comic)
+  } else {
+    res.status(404)
+    throw new Error('Comic not found')
+  }
+})
 
 // @desc    Create a comic
 // @route   POST /api/comics
@@ -40,4 +53,4 @@ const getComics = asyncHandler(async (req, res) => {
 
 // })
 
-export { getComics }
+export { getComics, getComicById }
