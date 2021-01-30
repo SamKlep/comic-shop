@@ -29,28 +29,42 @@ const getComicById = asyncHandler(async (req, res) => {
   }
 })
 
+// @desc    Delete a comic
+// @route   DELETE /api/comics/:id
+// @access  Private/Admin
+const deleteComic = asyncHandler(async (req, res) => {
+  const comic = await Comic.findById(req.params.id)
+
+  if (comic) {
+    await comic.remove()
+    res.json({ message: 'Comic removed' })
+  } else {
+    res.status(404)
+    throw new Error('Comic not found')
+  }
+})
+
 // @desc    Create a comic
 // @route   POST /api/comics
 // @access  Public
-// const createComic = asyncHandler(async (req, res) => {
-//   const comic = new Comic({
-//     title: 'Sample title',
-//     subtitle: 'Sample name',
-//     publisher: 'Sample name',
-//     issue: 'Sample name',
-//     year: 'Sample name',
-//     age: 0,
-//     author: req.user._id,
-//     artist: '/images/sample.jpg',
-//     character: 'Sample brand',
-//     category: 'Sample category',
-//     description: 0,
-//     image: 0,
-//   })
+const createComic = asyncHandler(async (req, res) => {
+  const comic = new Comic({
+    title: 'Sample title',
+    subtitle: 'Sample subtitle',
+    publisher: 'Sample publisher',
+    issue: 0,
+    year: 0,
+    age: 'Sample age',
+    author: 'Sample author',
+    artist: 'Sample artist',
+    character: 'Sample',
+    category: 'Sample category',
+    description: 'Sample description',
+    image: '/images/sample.jpg',
+  })
 
-//   const createComic = await product.save()
-//   res.status(201).json(createdProduct)
+  const createComic = await comic.save()
+  res.status(201).json(createComic)
+})
 
-// })
-
-export { getComics, getComicById }
+export { getComics, getComicById, deleteComic, createComic }
