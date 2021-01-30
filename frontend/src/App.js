@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import HomeScreen from './screens/HomeScreen'
 import { Container } from 'react-bootstrap'
+import ComicScreen from './screens/ComicScreen'
 
 function App() {
   return (
@@ -10,10 +11,10 @@ function App() {
       <Header />
       <main className='py-3'>
         <Container>
-        <Route path='/' component={HomeScreen} exact />
+          <Route path='/comics/:id' component={ComicScreen} />
+          <Route path='/' component={HomeScreen} exact />
         </Container>
       </main>
-      <h1>Comic Shop</h1>
     </Router>
   )
 }
