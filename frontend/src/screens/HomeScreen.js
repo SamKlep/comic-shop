@@ -12,8 +12,8 @@ const HomeScreen = () => {
     axios
       .get(`/api/comics`)
       .then((response) => {
-        setComics(response.data)
-        console.log(response.data)
+        setComics(response.data.comics)
+        console.log(response.data.comics)
         setLoading(false)
       })
       .catch((err) => {
