@@ -12,7 +12,7 @@ const comics = [
     category: 'super-hero',
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
-    image: '/images/Spider-Man.jpg',
+    image: '/images/spiderman.jpg',
   },
   {
     title: 'Amazing Spider-Man',
@@ -27,7 +27,7 @@ const comics = [
     category: 'super-hero',
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
-    image: '/images/Spider-Man.jpg',
+    image: '/images/spiderman2.jpg',
   },
   {
     title: 'Amazing Spider-Man',
@@ -42,7 +42,7 @@ const comics = [
     category: 'super-hero',
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
-    image: '/images/Spider-Man.jpg',
+    image: '/images/spiderman3.jpeg',
   },
   {
     title: 'Amazing Spider-Man',
@@ -57,7 +57,7 @@ const comics = [
     category: 'super-hero',
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
-    image: '/images/Spider-Man.jpg',
+    image: '/images/spiderman4.jpeg',
   },
 ]
 
