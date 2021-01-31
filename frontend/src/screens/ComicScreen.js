@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Row, Col, Image, ListGroup } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
 import axios from 'axios'
 
 const ComicScreen = ({ match }) => {
