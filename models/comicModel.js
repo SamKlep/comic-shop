@@ -4,6 +4,11 @@ import mongoose from 'mongoose'
 
 const comicSchema = mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
     title: {
       type: String,
       required: true,
@@ -50,6 +55,16 @@ const comicSchema = mongoose.Schema(
     image: {
       type: String,
       required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    countInStock: {
+      type: Number,
+      required: true,
+      default: 0,
     },
   },
   {

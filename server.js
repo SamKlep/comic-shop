@@ -9,6 +9,7 @@ import path from 'path'
 import comicRoutes from './routes/comicRoutes.js'
 import characterRoutes from './routes/characterRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 
 dotenv.config()
 
@@ -25,6 +26,7 @@ app.use(express.json())
 app.use('/api/comics', comicRoutes)
 app.use('/api/characters', characterRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/orders', orderRoutes)
 
 app.get('/', (req, res) => {
   res.send('API is running....')

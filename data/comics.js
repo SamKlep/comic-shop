@@ -13,6 +13,8 @@ const comics = [
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
     image: '/images/spiderman.jpg',
+    price: 89.99,
+    countInStock: 10,
   },
   {
     title: 'Amazing Spider-Man',
@@ -28,6 +30,8 @@ const comics = [
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
     image: '/images/spiderman2.jpg',
+    price: 49.99,
+    countInStock: 2,
   },
   {
     title: 'Amazing Spider-Man',
@@ -43,6 +47,8 @@ const comics = [
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
     image: '/images/spiderman3.jpeg',
+    price: 39.99,
+    countInStock: 1,
   },
   {
     title: 'Amazing Spider-Man',
@@ -58,6 +64,8 @@ const comics = [
     description:
       'With the sinister 6 on his tail, Spider-Man is in for the ride of his life!',
     image: '/images/spiderman4.jpeg',
+    price: 13.99,
+    countInStock: 2,
   },
 ]
 
