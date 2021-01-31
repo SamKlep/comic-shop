@@ -4,7 +4,15 @@
   font-family: 'Source Code Pro', monospace;
 }
 
+a:hover {
+  color: rgb(86, 214, 0);
+  text-decoration: none;
+}
+
 .logo {
   font-family: 'Londrina Solid', cursive;
   font-size: 1.6rem;
+}
+.logo:hover {
+  color: rgb(86, 214, 0);
 }

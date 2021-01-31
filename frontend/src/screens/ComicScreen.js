@@ -29,7 +29,7 @@ const ComicScreen = ({ history, match }) => {
 
   return (
     <>
-      <Link className='btn btn-dark my-3' to='/'>
+      <Link className='btn btn-light my-3' to='/'>
         Go Back
       </Link>
       {loading ? (
@@ -47,8 +47,16 @@ const ComicScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <h3>{comic.title}</h3>
                 </ListGroup.Item>
-
-                <ListGroup.Item>Price: ${comic.price}</ListGroup.Item>
+                {comic.subtitle ? (
+                  <ListGroup.Item>
+                    <h5>{comic.subtitle}</h5>
+                  </ListGroup.Item>
+                ) : (
+                  ''
+                )}
+                <ListGroup.Item>Issue: {comic.issue}</ListGroup.Item>
+                <ListGroup.Item>Publisher: {comic.publisher}</ListGroup.Item>
+                <ListGroup.Item>Year: {comic.year}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {comic.description}
                 </ListGroup.Item>
@@ -61,7 +69,15 @@ const ComicScreen = ({ history, match }) => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>{comic.price}</strong>
+                        <strong>${comic.price}</strong>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Condition:</Col>
+                      <Col>
+                        <strong>{comic.condition}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -69,7 +85,11 @@ const ComicScreen = ({ history, match }) => {
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {comic.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                        {comic.countInStock > 0 ? (
+                          <span className='text-success'>In Stock</span>
+                        ) : (
+                          <span className='text-danger'>Out of Stock</span>
+                        )}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -77,7 +97,7 @@ const ComicScreen = ({ history, match }) => {
                   {comic.countInStock > 0 && (
                     <ListGroup.Item>
                       <Col>
-                        <Row>Qty</Row>
+                        <Row className='py-3'>Qty</Row>
                         <Row>
                           <Form.Control
                             as='select'
