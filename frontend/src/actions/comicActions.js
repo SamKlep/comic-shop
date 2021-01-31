@@ -39,7 +39,7 @@ export const listComics = (keyword = '', pageNumber = '') => async (
   }
 }
 
-export const listProductDetails = (id) => async (dispatch) => {
+export const listComicDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: COMIC_DETAILS_REQUEST })
 
@@ -57,7 +57,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   }
 }
 
-export const deleteProduct = (id) => async (dispatch, getState) => {
+export const deleteComic = (id) => async (dispatch, getState) => {
   try {
     dispatch({
       type: COMIC_DELETE_REQUEST,
@@ -89,7 +89,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
   }
 }
 
-export const createProduct = () => async (dispatch, getState) => {
+export const createComic = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: COMIC_CREATE_REQUEST,
@@ -122,7 +122,7 @@ export const createProduct = () => async (dispatch, getState) => {
   }
 }
 
-export const updateProduct = (comic) => async (dispatch, getState) => {
+export const updateComic = (comic) => async (dispatch, getState) => {
   try {
     dispatch({
       type: COMIC_UPDATE_REQUEST,
