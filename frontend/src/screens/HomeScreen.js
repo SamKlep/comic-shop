@@ -1,33 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { Spinner, Row, Col } from 'react-bootstrap'
+import Paginate from '../components/Paginate'
 import Comic from '../components/Comic'
+import { listComics } from '../actions/comicActions'
 
-const HomeScreen = () => {
-  const [comics, setComics] = useState([])
-  const [loading, setLoading] = useState([])
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword
+
+  const pageNumber = match.params.pageNumber || 1
+
+  const dispatch = useDispatch()
+
+  const comicList = useSelector((state) => state.comicList)
+  const { loading, error, comics, page, pages } = comicList
 
   useEffect(() => {
-    setLoading(true)
-    axios
-      .get(`/api/comics`)
-      .then((response) => {
-        setComics(response.data.comics)
-        console.log(response.data.comics)
-        setLoading(false)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [])
-
-  if (loading) {
-    return (
-      <Spinner animation='border' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </Spinner>
-    )
-  }
+    dispatch(listComics(keyword, pageNumber))
+  }, [dispatch, keyword, pageNumber])
 
   return (
     <>
@@ -38,6 +29,7 @@ const HomeScreen = () => {
           </Col>
         ))}
       </Row>
+      <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
     </>
   )
 }

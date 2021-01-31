@@ -17,7 +17,7 @@ import {
   COMIC_UPDATE_FAIL,
 } from '../constants/comicConstants'
 
-export const listCOMICS = (keyword = '', pageNumber = '') => async (
+export const listComics = (keyword = '', pageNumber = '') => async (
   dispatch
 ) => {
   try {
