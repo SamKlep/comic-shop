@@ -57,9 +57,7 @@ const ComicScreen = ({ history, match }) => {
                 <ListGroup.Item>Issue: {comic.issue}</ListGroup.Item>
                 <ListGroup.Item>Publisher: {comic.publisher}</ListGroup.Item>
                 <ListGroup.Item>Year: {comic.year}</ListGroup.Item>
-                <ListGroup.Item>
-                  Description: {comic.description}
-                </ListGroup.Item>
+                <ListGroup.Item>{comic.description}</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>

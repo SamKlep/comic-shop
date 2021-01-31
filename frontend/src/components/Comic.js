@@ -14,8 +14,8 @@ const Comic = ({ comic }) => {
             <strong>{comic.title}</strong>
           </Card.Title>
         </Link>
-
         <Card.Text as='div'>
+          <Card.Text as='li'># {comic.issue}</Card.Text>
           <Card.Text as='li'>$ {comic.price}</Card.Text>
           <Card.Text as='li'>{comic.publisher}</Card.Text>
           <Card.Text as='li'>{comic.year}</Card.Text>
