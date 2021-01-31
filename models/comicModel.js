@@ -56,6 +56,11 @@ const comicSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    condition: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
     price: {
       type: Number,
       required: true,
